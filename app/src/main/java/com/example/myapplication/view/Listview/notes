@@ -1,0 +1,4 @@
+<!-- add by wx -->
+Listview的使用方式：
+1、以 android:entries 存放item，用xml常用的属性控制UI
+2、adapter：ArrayAdapter、SimpleAdapter 和 SimpleCursorAdapter,但是实际工作中，常用自定义适配器。即继承于BaseAdapter的自定义适配器类。

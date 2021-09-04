@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listview_array_item">
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+        <item>test 001</item>
+
+    </string-array>
+</resources>
