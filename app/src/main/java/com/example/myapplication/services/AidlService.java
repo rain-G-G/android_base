@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.util.Log;
 
 import com.example.myapplication.aidl.Game;
 import com.example.myapplication.aidl.IGameManager;
@@ -18,6 +19,7 @@ import java.util.List;
 
 public class AidlService extends Service {
 
+    private static final String TAG = "AidlService";
     private List<Game> mList = new ArrayList<>();
     private Binder mBinder = new IGameManager.Stub() {
         @Override
@@ -47,6 +49,7 @@ public class AidlService extends Service {
 
     @Override
     public void onDestroy() {
+        Log.v(TAG , " service onDestroy ");
         super.onDestroy();
     }
 

@@ -31,7 +31,7 @@ public class ScreenShotActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_direction);
 
-        requestScreenShotPmission();
+        //requestScreenShotPmission();
     }
 
     public void requestScreenShotPmission(){

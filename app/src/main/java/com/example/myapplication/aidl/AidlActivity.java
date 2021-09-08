@@ -56,6 +56,12 @@ public class AidlActivity extends AppCompatActivity {
         setContentView(R.layout.activity_aidl);
         Intent intent = new Intent(this, AidlService.class);
         bindService(intent, connection, BIND_AUTO_CREATE);
+        
+    }
 
+    @Override
+    protected void onDestroy() {
+        Log.v("AidlService", "activity onDestroy");
+        super.onDestroy();
     }
 }

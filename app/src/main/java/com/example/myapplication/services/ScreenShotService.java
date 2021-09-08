@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.hardware.display.DisplayManager;
@@ -22,6 +23,9 @@ import android.view.Display;
 import android.view.WindowManager;
 
 import com.example.myapplication.R;
+import com.example.myapplication.utils.ImageSaveUtil;
+
+import java.nio.ByteBuffer;
 
 public class ScreenShotService extends Service {
     private int mResultCode;
@@ -41,8 +45,12 @@ public class ScreenShotService extends Service {
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    public void onCreate() {
         createNotificationChannel();
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
         int mResultCode = intent.getIntExtra("code", -1);
         mResultData = intent.getParcelableExtra("data");
         Log.v("wangxin1", "res = " + mResultData.getData());
@@ -82,6 +90,21 @@ public class ScreenShotService extends Service {
         return super.onStartCommand(intent, flags, startId);
 
     }
+
+    private void saveJpeg(Image image,String name) {
+
+        Image.Plane[] planes = image.getPlanes();
+        ByteBuffer buffer = planes[0].getBuffer();
+        int pixelStride = planes[0].getPixelStride();
+        int rowStride = planes[0].getRowStride();
+
+        int rowPadding = rowStride - pixelStride * image.getWidth();
+        Bitmap bitmap = Bitmap.createBitmap(image.getWidth() + rowPadding / pixelStride, image.getHeight(), Bitmap.Config.ARGB_8888);
+        bitmap.copyPixelsFromBuffer(buffer);
+        //bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+        ImageSaveUtil.saveBitmap2file(bitmap, getApplicationContext(), name);
+    }
+
 
     private void createNotificationChannel() {
         Notification.Builder builder = new Notification.Builder(this.getApplicationContext()); //获取一个Notification构造器

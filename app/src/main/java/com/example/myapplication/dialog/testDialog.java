@@ -5,6 +5,4 @@ package com.example.myapplication.dialog;
  */
 
 public class testDialog{
-    public static void main(String[] args) {
-    }
 }
